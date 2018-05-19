@@ -1,0 +1,11 @@
+name: PvP_Toggle
+version: 1.0.0
+author: John_Willikers
+main: com.johnwillikers.pvp.PvpToggle
+commands:
+  pvp:
+    description: Toggle PvP
+    usage: /pvp, pvptoggle, pt
+    aliases: [pvptoggle, pt]
+    permissions: pvp.toggle
+    permission-message: You can't toggle your pvp silly
