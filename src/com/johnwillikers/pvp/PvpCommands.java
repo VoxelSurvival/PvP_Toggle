@@ -15,11 +15,11 @@ public class PvpCommands implements CommandExecutor{
 			PvpToggle.log("PVP", "DERP", "Pvp Toggle boolean = " + pvp);
 			if(pvp) {
 				PvpToggle.pvpToggle.replace(player, false);
-				player.sendMessage("You are no longer flagged for pvp");
+				player.sendMessage(ChatColor.GREEN + "You are no longer flagged for pvp!");
 				return true;
 			}
 			PvpToggle.pvpToggle.replace(player, true);
-			player.sendMessage("You are flagged for pvp");
+			player.sendMessage(ChatColor.RED + "You are flagged for pvp!");
 			return true;
 		}
 		return false;
