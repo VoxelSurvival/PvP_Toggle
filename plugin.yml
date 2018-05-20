@@ -5,7 +5,6 @@ main: com.johnwillikers.pvp.PvpToggle
 commands:
   pvp:
     description: Toggle PvP
-    usage: /pvp, pvptoggle, pt
-    aliases: [pvptoggle, pt]
+    aliases: [pvptoggle]
     permissions: pvp.toggle
-    permission-message: You can't toggle your pvp silly
+    permission-message: &cYou do not have permission to do that!

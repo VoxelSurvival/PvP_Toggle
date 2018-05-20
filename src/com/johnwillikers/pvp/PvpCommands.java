@@ -1,5 +1,6 @@
 package com.johnwillikers.pvp;
 
+import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -13,14 +14,15 @@ public class PvpCommands implements CommandExecutor{
 		if(cmd.getName().equalsIgnoreCase("pvp")) {
 			boolean pvp = PvpToggle.pvpToggle.get(player);
 			PvpToggle.log("PVP", "DERP", "Pvp Toggle boolean = " + pvp);
-			if(pvp) {
+			if (!pvp) {
+				player.sendMessage(ChatColor.RED + "Your pvp has been toggled to: " + ChatColor.GREEN + "DISABLED, meaning people can no longer hurt you.");
 				PvpToggle.pvpToggle.replace(player, false);
-				player.sendMessage(ChatColor.GREEN + "You are no longer flagged for pvp!");
+				return true;
+			} else {
+				player.sendMessage(ChatColor.GREEN + "Your pvp has been toggled to: " + ChatColor.RED + "ENABLED, meaning you are fair game.");
+				PvpToggle.pvpToggle.replace(player, true);
 				return true;
 			}
-			PvpToggle.pvpToggle.replace(player, true);
-			player.sendMessage(ChatColor.RED + "You are flagged for pvp!");
-			return true;
 		}
 		return false;
 	}
