@@ -24,6 +24,7 @@ public class PvpToggle extends JavaPlugin{
 	@Override
 	public void onEnable() {
 		this.getCommand("pvp").setExecutor(new PvpCommands());
+		this.getCommand("setpvp").setExecutor(new PvpCommands());
 		getServer().getPluginManager().registerEvents(new PvpListener(), this);
 		for(Player p : Bukkit.getOnlinePlayers()) {
 			pvpToggle.put(p, true);

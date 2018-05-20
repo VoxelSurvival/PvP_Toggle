@@ -8,3 +8,8 @@ commands:
     aliases: [pvptoggle]
     permissions: pvp.toggle
     permission-message: &cYou do not have permission to do that!
+  setpvp:
+    description: Force toggle pvp
+    aliases: [forcepvp, forcepvptoggle, pvpadmin]
+    permissions: pvp.toggle.force
+    permission-message: &cYou do not have permission to do that!

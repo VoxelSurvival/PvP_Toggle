@@ -19,12 +19,12 @@ public class PvpListener implements Listener{
 				//Can they damage the player
 				if(!PvpToggle.pvpToggle.get(damager)) {
 					e.setCancelled(true);
-					damager.sendMessage(ChatColor.RED + "You can't hurt that player.");
+					damager.sendMessage(ChatColor.RED + "You can't hurt " + damagee.getName() + " because they have PvP disabled!");
 				}
 				//Can the player be damaged
 				if(!PvpToggle.pvpToggle.get(damagee)) {
 					e.setCancelled(true);
-					damager.sendMessage(ChatColor.GREEN + damagee.getDisplayName() + " has their PvP toggled off");
+					damagee.sendMessage(ChatColor.RED + damager.getName() + " tried to hurt you.");
 				}
 			}
 		}
@@ -33,7 +33,7 @@ public class PvpListener implements Listener{
 	
 	@EventHandler
 	public void onPlayerJoin(PlayerJoinEvent e) {
-		PvpToggle.pvpToggle.put(e.getPlayer(), true);
+		PvpToggle.pvpToggle.put(e.getPlayer(), false);
 	}
 	
 	@EventHandler
